@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif", serif;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4793AF;
+}
+.container{
+    width: 600px;
+    padding: 2rem;
+    background-color: #FFC470;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 2px 4px 6px 8px #8B322C;
+}
+.container h1{
+    font-size: 2.125rem;
+    text-align: center;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+.container .content{
+    margin: 35px 0;
+}
+.content .quote-area{
+    display: flex;
+}
+.quote-area i{
+    font-size: 11px;
+}
+.quote-area i:first-child{
+    margin: 3px 10px 0 0;
+}
+.quote-area i:last-child{
+    display: flex;
+    align-items: flex-end;
+    margin: 0 0 3px 10px;
+}
+.quote-area .quote{
+    font-size: 1.413rem;
+    font-weight: 500;
+    word-break: keep-all;
+    color: #DD5746;
+    text-align: center;
+}
+.container .author{
+    width: fit-content;
+    font-size: 24px;
+    font-style: italic;
+    text-align: right;
+    color: #8B322C;
+    margin-left: auto;
+    position: relative;
+}
+.container .author::before{
+    content: '';
+    width: 20px;
+    height: 2px;
+    background-color: #8B322C;
+    position: absolute;
+    left: -20%;
+    top: 50%;
+}
+.container .buttons{
+    width: 100%;
+    border-top: 1px solid #DD5746;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.buttons ul{
+    display: flex;
+}
+.buttons ul li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #4793AF;
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #4793AF;
+    font-size: 1.413rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.buttons ul li:hover::after {
+    font-size: 14px;
+    color: #4793AF;
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: -100%;
+    z-index: 100;
+    width: max-content;
+}
+.buttons ul li.speak:hover::after{
+    content: 'Speak Quote';
+}
+.buttons ul li.copy:hover::after{
+    content: 'Copy Quote';
+}
+.buttons ul li.x:hover::after{
+    content: 'Tweet Quote';
+}
+.buttons ul li:hover{
+    color: #fff;
+    background-color: #4793AF;
+}
+.buttons ul li:active{
+    transform: scale(.97);
+}
+.buttons #quote-btn{
+    border: none;
+    outline: none;
+    background-color: #4793AF;
+    color: #fff;
+    padding: 13px 22px;
+    font-size: 1.413rem;
+    border-radius: 26px;
+    cursor: pointer;
+}
+#quote-btn:active{
+    transform: scale(.97);
+}
+#quote-btn.loading{
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+
+
+/* responsive design  */
+
+@media (max-width:592px) {
+    .container{
+        width: 100%;
+    }
+    .container .buttons{
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
